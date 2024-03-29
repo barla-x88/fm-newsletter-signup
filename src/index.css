@@ -115,11 +115,83 @@ input {
   margin-bottom: 24px;
 }
 
+input:hover {
+  cursor: pointer;
+  border-color: var(--charcoal-grey);
+}
+
+input:focus {
+  border-color: 2px solid var(--charcoal-grey);
+  outline: none;
+}
+
 button {
   background-color: var(--dark-grey);
   color: white;
   font-weight: 700;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 83, 121, 1) 0%,
+    rgba(255, 104, 62, 1) 60%
+  );
 }
 
 @media (min-width: 992px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-grey);
+  }
+
+  .container {
+    display: flex;
+    width: 926px;
+    height: 640px;
+    border-radius: 26px;
+    background-color: white;
+  }
+
+  .form-container,
+  .img-container {
+    width: 50%;
+  }
+
+  .img-container {
+    order: 2;
+    background: none;
+    padding: 26px 42px;
+    padding-right: 22px;
+  }
+
+  .form-container {
+    padding-left: 64px;
+  }
+
+  .form-container > div {
+    padding-right: 22px;
+    padding-left: 0;
+  }
+
+  form {
+    padding-left: 0;
+  }
+
+  h1 {
+    padding-top: 58px;
+  }
+
+  .lg-background {
+    height: 100%;
+    background: url('./assets/images/illustration-sign-up-desktop.svg')
+      no-repeat;
+
+    border-radius: 22px;
+  }
 }
