@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('./assets/fonts/Roboto-Bold.ttf');
+}
+
+:root {
+  --dark-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.6%;
@@ -9,4 +25,101 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+.img-container {
+  background: url('./assets/images/illustration-sign-up-mobile.svg') no-repeat;
+}
+
+.form-container {
+  font-size: 1.6rem;
+}
+
+.form-container > div {
+  padding-left: 22px;
+  padding-right: 54px;
+}
+
+h1,
+label {
+  color: var(--dark-grey);
+  font-weight: 700;
+  font-family: 'Roboto Bold', sans-serif;
+}
+
+p,
+ul {
+  color: var(--charcoal-grey);
+  font-weight: 400;
+  font-family: 'Roboto Regular', sans-serif;
+}
+
+p {
+  margin-top: 24px;
+  margin-bottom: 34px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url('./assets/images/icon-list.svg') center/cover no-repeat;
+  margin-right: 16px;
+}
+
+@media (max-width: 375px) {
+  .img-container {
+    min-height: 34vh;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 376px) {
+  .img-container {
+    min-height: 40vh;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  h1 {
+    margin-top: 42px;
+  }
+}
+
+form {
+  padding: 22px;
+}
+
+label {
+  display: block;
+}
+
+input,
+button {
+  display: inline-block;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  font-size: 1.6rem;
+}
+
+input {
+  margin: 10px 0;
+  margin-bottom: 24px;
+}
+
+button {
+  background-color: var(--dark-grey);
+  color: white;
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
 }
