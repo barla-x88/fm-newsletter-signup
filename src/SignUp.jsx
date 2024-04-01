@@ -60,6 +60,7 @@ const SignUp = ({ setEmail }) => {
             <span className="validation-msg" ref={labelRef}></span>
           </label>
           <input
+            required
             type="text"
             id="email"
             name="email"
