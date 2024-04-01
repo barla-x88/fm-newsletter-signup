@@ -97,7 +97,9 @@ form {
 }
 
 label {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
 }
 
 input,
@@ -123,6 +125,10 @@ input:hover {
 input:focus {
   border-color: 2px solid var(--charcoal-grey);
   outline: none;
+}
+
+.validation-msg {
+  color: hsl(4, 100%, 67%);
 }
 
 button {

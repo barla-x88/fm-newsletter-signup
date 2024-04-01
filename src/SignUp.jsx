@@ -1,4 +1,35 @@
+import { useEffect, useRef } from 'react';
+
 const SignUp = ({ setEmail }) => {
+  const labelRef = useRef(null);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    const input = inputRef.current;
+    const showError = () => {
+      labelRef.current.innerText = 'Valid email required';
+      input.style.backgroundColor = '#ffe8e6';
+      input.style.color = 'hsl(4, 100%, 67%)';
+      // https://angelika.me/2020/02/01/custom-error-messages-for-html5-form-validation/
+      input.setCustomValidity("This Doesn't look like a valid Email");
+    };
+
+    const hideError = () => {
+      labelRef.current.innerText = '';
+      input.style = {};
+      // necessary to set it to an empty string
+      input.setCustomValidity('');
+    };
+
+    input.addEventListener('invalid', showError);
+    input.addEventListener('input', hideError);
+
+    return () => {
+      removeEventListener('invalid', showError);
+      removeEventListener('input', hideError);
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -24,12 +55,17 @@ const SignUp = ({ setEmail }) => {
           </ul>
         </div>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">
+            <span>Email address</span>
+            <span className="validation-msg" ref={labelRef}></span>
+          </label>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             placeholder="email@company.com"
+            ref={inputRef}
+            pattern="^[a-zA-Z0-9z_+-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}$"
           />
           <button>Subscribe to monthly newsletter</button>
         </form>
