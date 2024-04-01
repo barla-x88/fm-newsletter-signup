@@ -1,6 +1,6 @@
 import successImg from './assets/images/icon-success.svg';
 
-const Success = ({ email }) => {
+const Success = ({ email, setEmail }) => {
   return (
     <div className="success-container">
       <div className="success-text">
@@ -17,7 +17,7 @@ const Success = ({ email }) => {
         </div>
       </div>
       <div className="success-btn">
-        <button>Dismiss message</button>
+        <button onClick={() => setEmail(false)}>Dismiss message</button>
       </div>
     </div>
   );

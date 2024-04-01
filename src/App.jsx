@@ -6,7 +6,13 @@ const App = () => {
   const [email, setEmail] = useState(false);
 
   return (
-    <>{email ? <Success email={email} /> : <SignUp setEmail={setEmail} />}</>
+    <>
+      {email ? (
+        <Success email={email} setEmail={setEmail} />
+      ) : (
+        <SignUp setEmail={setEmail} />
+      )}
+    </>
   );
 };
 export default App;
