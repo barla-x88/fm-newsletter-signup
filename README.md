@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/barla-x88/fm-newsletter-signup)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repo](https://github.com/barla-x88/fm-newsletter-signup)
+- Live Site URL: [https://register-newsletter.netlify.app](https://register-newsletter.netlify.app/)
 
 ## My process
 
